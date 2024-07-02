@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="../dist/beautifyQrcode.js"></script>
+        <!-- <script src="../src/index.js"></script> -->
+    </head>
+    <body>
+        <div id="qr" style="width: 200px;height: 200px;">
+
+        </div>
+    </body>
+    <script>
+const {
+    encodeData,
+    renderer25D,
+    rendererRect,
+    rendererRound,
+    rendererRandRound,
+    rendererDSJ,
+    rendererRandRect,
+    rendererImage,
+    rendererResImage,
+} = window.beautifyQrcode;
+const qrcode = encodeData({
+    text: "addada",
+    correctLevel: 0,
+});
+const C1 = rendererImage(qrcode, {
+    backgroudImage:"./favicon.ico",
+});
+const qr=document.getElementById("qr");
+qr.innerHTML = C1;
+    </script>
+</html>
